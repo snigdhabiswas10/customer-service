@@ -1,1 +1,1 @@
-# java-spring-services
+# customer-service
