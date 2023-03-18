@@ -1,4 +1,4 @@
-package com.practice.javaspring;
+package com.service.customerservice;
 
 
 import org.springframework.boot.SpringApplication;

@@ -1,4 +1,4 @@
-package com.practice.javaspring.javaspring;
+package com.service.customerservice.javaspring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
