@@ -1,11 +1,12 @@
 package com.service.customerservice.controller;
 
 import com.service.customerservice.service.CustomerService;
+import com.service.customerservice.viewmodel.request.CreateCustomerRequest;
+import com.service.customerservice.viewmodel.response.CommonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @RestController("/customer")
 public class CustomerController {
@@ -14,8 +15,12 @@ public class CustomerController {
     private CustomerService customerService;
 
     @GetMapping("/{id}")
-    private ResponseEntity<?> getCustomer(@RequestParam String id){
+    public ResponseEntity<CommonResponse> getCustomer(@PathVariable String id){
         return customerService.getCustomer(id);
+    }
 
+    @PostMapping
+    public ResponseEntity<CommonResponse> createCustomer(@Validated  @RequestBody CreateCustomerRequest createCustomerRequest){
+        return customerService.create(createCustomerRequest);
     }
 }

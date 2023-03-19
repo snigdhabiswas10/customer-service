@@ -9,6 +9,9 @@ import lombok.Data;
 public class CustomerProfileResponse {
 
     private String fullName;
+    private String userId;
+    private String username;
+    private String emailId;
     private String mobileNo;
     private String image;
 
@@ -17,6 +20,9 @@ public class CustomerProfileResponse {
                 .builder()
                 .fullName(customer.getFullName())
                 .mobileNo(customer.getMobileNo())
+                .username(customer.getUserName())
+                .emailId(customer.getEmailId())
+                .userId(customer.getUserId())
                 .image(customer.getImage())
                 .build();
     }
